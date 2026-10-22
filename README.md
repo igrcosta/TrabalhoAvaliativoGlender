@@ -8,6 +8,6 @@ Autor: Igor Costa
 
 ## Sprint 1
 
-- Front-end (telas sem funcionalidade): [frontend/](frontend/) - abrir `frontend/index.html`
+- Front-end (telas sem funcionalidade): [src/main/resources/static/](src/main/resources/static/) - rodar o projeto e abrir http://localhost:8080
 - Diagrama de classes: [docs/diagrama-de-classes.md](docs/diagrama-de-classes.md)
 - Cartões CRC: [docs/Cartoes-CRC.docx](docs/Cartoes-CRC.docx)
