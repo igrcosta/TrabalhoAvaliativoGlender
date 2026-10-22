@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacientes - Sistema Hospitalar</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside><h1>＋ Hospital</h1><nav><a href="index.html">Início</a><a href="pacientes.html" class=active>Pacientes</a><a href="profissionais.html">Profissionais</a><a href="consultas.html">Consultas</a><a href="internacoes.html">Internações</a><a href="quartos.html">Quartos</a><a href="historico.html">Histórico Médico</a></nav></aside>
+<main>
+<h2>Pacientes</h2>
+<section class="card"><h3>Novo Paciente</h3>
+<form onsubmit="return false"><div class="grid"><label class="wide">Nome completo<input type="text" placeholder="Nome do paciente"></label><label>CPF<input type="text" placeholder="000.000.000-00"></label><label>Data de nascimento<input type="date" placeholder=""></label><label>Telefone<input type="tel" placeholder="(31) 99999-9999"></label><label>E-mail<input type="email" placeholder="paciente@email.com"></label><label class="wide">Endereço<input type="text" placeholder="Rua, número, bairro, cidade"></label></div>
+<div class="bar"><button class="btn" type="reset">Limpar</button><button class="btn primary" type="submit">Salvar</button></div></form></section>
+<section class="card"><div class="bar"><input type="search" placeholder="Buscar por nome ou CPF"><button class="btn">Buscar</button></div>
+<table><thead><tr><th>Nome</th><th>CPF</th><th>Nascimento</th><th>Telefone</th><th>E-mail</th><th>Ações</th></tr></thead><tbody><tr><td>Maria Souza</td><td>123.456.789-00</td><td>12/03/1985</td><td>(31) 98888-1111</td><td>maria@email.com</td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr><tr><td>Carlos Pereira</td><td>987.654.321-00</td><td>30/07/1962</td><td>(31) 97777-2222</td><td>carlos@email.com</td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr><tr><td>Beatriz Alves</td><td>456.123.789-00</td><td>05/11/1999</td><td>(31) 96666-3333</td><td>bia@email.com</td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr></tbody></table></section>
+</main>
+</body>
+</html>

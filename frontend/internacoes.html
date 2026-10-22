@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internações - Sistema Hospitalar</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside><h1>＋ Hospital</h1><nav><a href="index.html">Início</a><a href="pacientes.html">Pacientes</a><a href="profissionais.html">Profissionais</a><a href="consultas.html">Consultas</a><a href="internacoes.html" class=active>Internações</a><a href="quartos.html">Quartos</a><a href="historico.html">Histórico Médico</a></nav></aside>
+<main>
+<h2>Internações</h2>
+<section class="card"><h3>Novo Internação</h3>
+<form onsubmit="return false"><div class="grid"><label>Paciente<select><option>Maria Souza</option><option>Carlos Pereira</option><option>Beatriz Alves</option></select></label><label>Profissional responsável<select><option>Dr. João Lima</option><option>Dra. Ana Reis</option><option>Dr. Paulo Neto</option></select></label><label>Quarto (disponível)<select><option>102 - 1º andar (2 vagas)</option><option>204 - 2º andar (1 vaga)</option></select></label><label>Data de entrada<input type="date" placeholder=""></label><label>Data prevista de alta<input type="date" placeholder=""></label><label>Data efetiva de alta<input type="date" placeholder=""></label><label class="wide">Observações<textarea rows="3" placeholder="Observações da internação"></textarea></label></div>
+<div class="bar"><button class="btn" type="reset">Limpar</button><button class="btn primary" type="submit">Salvar</button></div></form></section>
+<section class="card"><div class="bar"><input type="search" placeholder="Buscar por paciente ou quarto"><button class="btn">Buscar</button></div>
+<table><thead><tr><th>Paciente</th><th>Profissional</th><th>Quarto</th><th>Entrada</th><th>Prev. alta</th><th>Alta efetiva</th><th>Situação</th><th>Ações</th></tr></thead><tbody><tr><td>José Martins</td><td>Dr. João Lima</td><td>101</td><td>20/10/2026</td><td>25/10/2026</td><td>—</td><td><span class="badge amber">Internado</span></td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr><tr><td>Lúcia Costa</td><td>Dra. Ana Reis</td><td>204</td><td>21/10/2026</td><td>24/10/2026</td><td>—</td><td><span class="badge amber">Internado</span></td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr><tr><td>Pedro Dias</td><td>Dr. Paulo Neto</td><td>102</td><td>10/10/2026</td><td>14/10/2026</td><td>14/10/2026</td><td><span class="badge green">Alta</span></td><td class="acts"><button class="btn sm">Editar</button><button class="btn sm danger">Excluir</button></td></tr></tbody></table></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Diagrama de Classes - Sistema Hospitalar</title>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:24px}</style>
+</head>
+<body>
+<h1>Diagrama de Classes - Sistema Hospitalar</h1>
+<pre class="mermaid">
+classDiagram
+    direction TB
+    class Pessoa {
+        <<abstract>>
+        -Long id
+        -String nome
+        -String telefone
+        -String email
+    }
+    class Paciente {
+        -String cpf
+        -LocalDate dataNascimento
+        -String endereco
+        +getHistorico() HistoricoMedico
+    }
+    class ProfissionalSaude {
+        -String registroProfissional
+        -String especialidade
+        +disponivelEm(LocalDate data, LocalTime horario) boolean
+    }
+    class Consulta {
+        -Long id
+        -LocalDate data
+        -LocalTime horario
+        -String motivo
+        -String observacoesMedicas
+        -StatusConsulta status
+        +cancelar()
+        +realizar(String observacoes)
+    }
+    class Internacao {
+        -Long id
+        -LocalDate dataEntrada
+        -LocalDate dataPrevistaAlta
+        -LocalDate dataEfetivaAlta
+        -String observacoes
+        +darAlta(LocalDate data)
+        +isAtiva() boolean
+    }
+    class Quarto {
+        -Long id
+        -int numero
+        -int andar
+        -int capacidadeMaxima
+        -SituacaoQuarto situacao
+        +ocupacaoAtual() int
+        +temVaga() boolean
+    }
+    class HistoricoMedico {
+        +getConsultas() List~Consulta~
+        +getInternacoes() List~Internacao~
+    }
+    class StatusConsulta {
+        <<enumeration>>
+        AGENDADA
+        REALIZADA
+        CANCELADA
+    }
+    class SituacaoQuarto {
+        <<enumeration>>
+        DISPONIVEL
+        OCUPADO
+    }
+    Pessoa <|-- Paciente
+    Pessoa <|-- ProfissionalSaude
+    Paciente "1" --> "0..*" Consulta : realiza
+    ProfissionalSaude "1" --> "0..*" Consulta : atende
+    Paciente "1" --> "0..*" Internacao : possui
+    ProfissionalSaude "1" --> "0..*" Internacao : responsável
+    Quarto "1" --> "0..*" Internacao : aloca
+    Paciente "1" -- "1" HistoricoMedico : possui
+    HistoricoMedico o-- "0..*" Consulta
+    HistoricoMedico o-- "0..*" Internacao
+    Consulta ..> StatusConsulta
+    Quarto ..> SituacaoQuarto
+</pre>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>
